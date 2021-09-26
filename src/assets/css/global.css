@@ -4,3 +4,16 @@ html,body,#app{
     margin: 0;
     padding: 0;
 }
+.el-breadcrumb{
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+.el-card{
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+    /* 框架内部样式权重比较高，用 !important 强制自定义设置样式 */
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15) !important;
+}
+.el-table{
+    margin-top: 15px;
+    font-size: 12px;
+}
