@@ -3,11 +3,12 @@ import App from './App.vue'
 import router from './router'
 
 // 配置 ElementUI
-import ElementUI, { Message } from 'element-ui';
+import ElementUI, { Message, MessageBox } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI)
 // 将message挂载为 vue 原型上的一个属性，这样就可以在每个组件中都可以通过 this. 来拿到$message，从而来使用其方法
 Vue.prototype.$message=Message
+// Vue.prototype.$confirm=MessageBox.confirm
 
 // 配置 axios
 import axios from 'axios';
