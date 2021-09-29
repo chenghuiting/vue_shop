@@ -2,6 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 
+// 配置 vue-table-with-tree-grid
+import TreeTable from 'vue-table-with-tree-grid'
+Vue.component('tree-table',TreeTable)
+
 // 配置 ElementUI
 import ElementUI, { Message, MessageBox } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
