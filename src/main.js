@@ -19,12 +19,22 @@ import axios from 'axios';
 
 // 配置请求的根路径
 axios.defaults.baseURL = 'https://api.naccl.top/vue/shop/api/private/v1/'
+
+// 在 request 拦截器中，展示进度条 NProgress.start()
 axios.interceptors.request.use(config => {
+  NProgress.start()
   console.log(config);
   config.headers.Authorization = window.sessionStorage.getItem('token')
   // 在最后必须 return config
   return config
 })
+
+// 在 response 拦截器中，隐藏进度条 NProgress.done()
+axios.interceptors.response.use(config => {
+  NProgress.done()
+  return config
+})
+
 Vue.prototype.$http = axios
 
 // 导入字体图标
@@ -41,6 +51,10 @@ import 'quill/dist/quill.snow.css' // for snow theme
 import 'quill/dist/quill.bubble.css' // for bubble theme
 // 将富文本编辑器注册为全局可用的组件
 Vue.use(VueQuillEditor)
+
+// 导入 nprogress 包对应的 js和 css
+import NProgress from 'nprogress'
+import 'nprogress/nprogress.css'
 
 Vue.config.productionTip = false
 

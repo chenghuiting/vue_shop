@@ -50,7 +50,7 @@
         </template>
 
         <!-- 操作 -->
-        <template slot="opt" slot-scope="scope">
+        <template slot="opt">
           <el-button size="mini" type="primary" icon="el-icon-edit"
             >编辑</el-button
           >
@@ -97,7 +97,7 @@
             v-model="selectedKeys"
             :options="parentCateList"
             :props="cascaderProps"
-            @change="parenttCateChanged"
+            @change="parentCateChanged"
             clearable
           ></el-cascader>
         </el-form-item>
@@ -233,7 +233,7 @@ export default {
       this.parentCateList = res.data
     },
     // 选择项发生变化触发这个函数
-    parenttCateChanged() {
+    parentCateChanged() {
       console.log(this.selectedKeys)
       //如果 selectedKeys 数组中的 length 大于0，证明选中了父级分类
       //反之，就说明没有选中任何父级分类
